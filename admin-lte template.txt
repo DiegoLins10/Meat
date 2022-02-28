@@ -8,3 +8,9 @@ npm install font-awesome
 
 
 inserir dependencias no styles e scripts no angular.json
+
+
+----------------------- GERAR UM NOVO COMPONENTE --------------------------------
+ng g c (Nome)
+
+ng generate component (nome)
