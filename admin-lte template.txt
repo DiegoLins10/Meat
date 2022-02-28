@@ -1,0 +1,10 @@
+
+npm install jquery
+
+npm install admin-lte@^2.3 --save
+
+npm install font-awesome
+
+
+
+inserir dependencias no styles e scripts no angular.json
