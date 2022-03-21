@@ -14,7 +14,8 @@ restaurants!: Restaurant[]
   constructor(private restaurantsService: RestaurantsService) { }
 
   ngOnInit(): void {
-    this.restaurants = this.restaurantsService.restaurants()
+    this.restaurantsService.restaurants()
+    .subscribe((res: Restaurant[]) => this.restaurants = res)
   }
 
 }

@@ -1,28 +1,27 @@
 import { Restaurant } from "./restaurant/restaurant.model";
+import { MEAT_API } from "../app.api";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable, of } from "rxjs";
+import { map, catchError } from 'rxjs/operators';
 
+
+@Injectable()
 export class RestaurantsService {
-    constructor(){}
 
+    constructor(private http: HttpClient){
 
-    rests: Restaurant[] = [
-        {
-          "id": "bread-bakery",
-          "name": "Bread & Bakery",
-          "category": "Bakery",
-          "deliveryEstimate": "25m",
-          "rating": 4.9,
-          "imagePath": "assets/img/restaurants/breadbakery.png",
-        },
-        {
-          "id": "burger-house",
-          "name": "Burger House",
-          "category": "Hamburgers",
-          "deliveryEstimate": "100m",
-          "rating": 3.5,
-          "imagePath": "assets/img/restaurants/burgerhouse.png",
-        }]
-
-    restaurants(): Restaurant[]{
-        return this.rests;
     }
+
+    restaurants(): any{
+        return this.http
+        .get(`${MEAT_API}/restaurants`)
+        .pipe(map((body: any) => body),
+             catchError(() => of('deu ruim')) 
+        );
+    }
+    /*
+     restaurants(): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`);
+  }*/
 }
