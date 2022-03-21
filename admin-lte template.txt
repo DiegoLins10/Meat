@@ -14,3 +14,9 @@ inserir dependencias no styles e scripts no angular.json
 ng g c (Nome)
 
 ng generate component (nome)
+
+--------------------- lib para criar api com um arquivo json -------------
+npm install -g json-server
+
+--start o project
+json-server db.json
