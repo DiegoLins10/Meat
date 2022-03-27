@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { map, catchError } from 'rxjs/operators';
+import { ErrorHandler } from "../app.error-handler";
 
 
 @Injectable()
@@ -17,7 +18,7 @@ export class RestaurantsService {
         return this.http
         .get(`${MEAT_API}/restaurants`)
         .pipe(map((body: any) => body),
-             catchError(() => of('deu ruim')) 
+             catchError(ErrorHandler.handleError) 
         );
     }
     /*
