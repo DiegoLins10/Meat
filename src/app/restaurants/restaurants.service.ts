@@ -37,8 +37,8 @@ export class RestaurantsService {
         );
     }
 
-    menuOfRestaurant(id: string): Observable<MenuItem>{
-      return this.http.get<MenuItem>(`${MEAT_API}/restaurants/${id}/reviews`)
+    menuOfRestaurant(id: string): Observable<MenuItem[]>{
+      return this.http.get<MenuItem[]>(`${MEAT_API}/restaurants/${id}/menu`)
       .pipe(map((body: any) => body),
              catchError(ErrorHandler.handleError) 
         );
