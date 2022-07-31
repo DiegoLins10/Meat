@@ -1,0 +1,39 @@
+-- PIPESSSS UTEISS---------
+
+user: = {name: 'Diego Lins', isJedi: true}
+
+<div>{{user}}</div>
+
+--formata em uma string json
+<div>{{user | json}}</div>
+
+--formata em maisucula
+<div>{{user.name | uppercase}}</div>
+
+--formata em minuscula
+<div>{{user.name | lowercase}}</div>
+
+--formata em percentual 50%
+<div>{{0.5 | percent}}</div>
+
+--formata em percentual data
+<div>{{birth | date: 'dd/MM/yyyy'}}</div>
+
+--formata em dolar valor default
+<div>{{price | currency}}</div>
+
+--formata em real valor default
+<div>{{price | currency: 'BRL': true}}</div>
+
+--limita array e string
+<div>{{user.name | slice: 0:4}}</div>
+
+
+--pipe 
+this.reviews = this.restaurantsService
+    .reviewsOfRestaurant(this.route.parent?.snapshot.params['id'])
+
+<div class="col-xs-12 col-sm-6" *ngFor="let review of reviews | async">
+
+
+
