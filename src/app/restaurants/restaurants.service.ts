@@ -5,6 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { map, catchError } from 'rxjs/operators';
 import { ErrorHandler } from "../app.error-handler";
+import { MenuItem } from "../restaurant-detail/menu-item/menu-item.model";
 
 
 @Injectable()
@@ -28,8 +29,19 @@ export class RestaurantsService {
              catchError(ErrorHandler.handleError) 
         );
     }
-    /*
-     restaurants(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`);
-  }*/
+
+    reviewsOfRestaurant(id: string): Observable<any>{
+      return this.http.get<any>(`${MEAT_API}/restaurants/${id}/reviews`)
+      .pipe(map((body: any) => body),
+             catchError(ErrorHandler.handleError) 
+        );
+    }
+
+    menuOfRestaurant(id: string): Observable<MenuItem>{
+      return this.http.get<MenuItem>(`${MEAT_API}/restaurants/${id}/reviews`)
+      .pipe(map((body: any) => body),
+             catchError(ErrorHandler.handleError) 
+        );
+    }
+
 }
