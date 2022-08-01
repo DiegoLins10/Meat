@@ -5,6 +5,8 @@ npm install admin-lte@^2.3 --save
 
 npm install font-awesome
 
+node usado 16.14.0
+
 
 
 inserir dependencias no styles e scripts no angular.json
