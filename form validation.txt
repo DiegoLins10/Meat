@@ -1,0 +1,10 @@
+valid : Esta propriedade retorna true se o conteúdo do elemento for válido e false caso contrário.
+invalid : Esta propriedade retorna true se o conteúdo do elemento for inválido e false caso contrário.
+pristine : Esta propriedade retorna true se o conteúdo do elemento não tiver sido alterado.
+dirty: esta propriedade retorna true se o conteúdo do elemento foi alterado .
+untouched : Esta propriedade retorna true se o usuário não visitou o elemento.
+touch : Esta propriedade retorna true se o usuário visitou o elemento.
+
+
+
+[class.has-success]="iptAddress.valid && (iptAddress.dirty || iptAddress.touched)
