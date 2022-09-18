@@ -26,12 +26,12 @@
               <input class="form-control" type="text" placeholder="endereço" name="addres" ngModel required minlength="5" autocomplete="off">
              </app-input-container>
             </div>
-            <div class="col-sm-2 col-xs-6">
-              <app-input-container [errorMessage]="'Campo obrigatório numero'" label="Numero">
-                <input type="text" class="form-control" name="number" ngModel required placeholder="Número" autocomplete="off">
+            <div class="col-sm-3 col-xs-6">
+              <app-input-container [errorMessage]="'Obrigatório e somente números'" label="Numero">
+                <input type="text" class="form-control" [pattern]="'^[0-9]*$'" name="number" ngModel required placeholder="Número" autocomplete="off">
               </app-input-container>
             </div>
-            <div class="col-sm-4 col-xs-6">
+            <div class="col-sm-3 col-xs-6">
               <app-input-container [label]="'Complemento'">
                 <input type="text" class="form-control" name="optional" ngModel placeholder="Complemento">
               </app-input-container>
