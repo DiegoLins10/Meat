@@ -21,6 +21,7 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
+import { InputComponent } from './shared/input/input.component';
 
 registerLocaleData(ptBr)
 
@@ -38,6 +39,7 @@ registerLocaleData(ptBr)
     MenuItemComponent,
     ReviewsComponent,
     OrderComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,
