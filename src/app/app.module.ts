@@ -23,6 +23,7 @@ import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
+import { OrderItemComponent } from './order/order-item/order-item.component';
 
 registerLocaleData(ptBr)
 
@@ -42,6 +43,7 @@ registerLocaleData(ptBr)
     OrderComponent,
     InputComponent,
     RadioComponent,
+    OrderItemComponent,
   ],
   imports: [
     BrowserModule,
