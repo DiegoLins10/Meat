@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
 import { RadioOption } from '../shared/radio/radio-option';
+import { OrderService } from './order.service';
 
 @Component({
   selector: 'app-order',
@@ -14,9 +16,25 @@ export class OrderComponent implements OnInit {
     {label: 'Cartão de refeição', value: 'REF'}, 
   ];
 
-  constructor() { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
+  }
+  
+  cartItems() : CartItem[] {
+    return this.orderService.cartItems();
+  }
+
+  increaseQty(item: CartItem){
+    this.orderService.increaseQty(item);
+  }
+
+  decreaseQty(item: CartItem){
+    this.orderService.decreaseQty(item);
+  }
+
+  remove(item: CartItem){
+    this.orderService.remove(item);
   }
 
 }
