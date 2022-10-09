@@ -25,6 +25,7 @@ import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
 import { OrderItemComponent } from './order/order-item/order-item.component';
 import { OrderService } from './order/order.service';
+import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
 
 registerLocaleData(ptBr)
 
@@ -45,6 +46,7 @@ registerLocaleData(ptBr)
     InputComponent,
     RadioComponent,
     OrderItemComponent,
+    DeliveryCostsComponent,
   ],
   imports: [
     BrowserModule,
