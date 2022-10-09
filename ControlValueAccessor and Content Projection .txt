@@ -1,0 +1,17 @@
+Quando criamos um componente para o input text do endereço, nós retiramos a div dele do componente order e colocamos em um novo componente, o input.
+
+Com isso, deixamos o input text encapsulado dentro de outro componente e o form não conseguiu mais enxergá-lo. O form perdeu a rastreabilidade daquele campo.
+
+E para resolver esse problema, tinhamos duas saídas:
+
+Nós poderiamos usar o Content Projection ou o ControlValueAccessor.
+
+
+
+No caso do input text do endereço, nós transformamos o nosso componente em um componente container, onde aplicamos apenas o estilo visual e deixamos que o componente pai (componente de compra) nos passasse o input text. Isso é o chamado Content Projection.
+
+
+
+No caso do input do radio, usamos o ControlValueAccessor.
+
+Nele nós deixamos o nosso componente completamente isolado dentro do input e implementamos uma interface chamada ControlValueAccessor, que serve como ponte entre as diretivas usadas (como ngmodel) e o nosso componente.
