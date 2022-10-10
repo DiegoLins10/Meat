@@ -41,7 +41,8 @@ export class OrderService{
         return this.http.post<string>(`${MEAT_API}/orders`, 
                                     JSON.stringify(order), 
                                     { headers })
-                                    .pipe(map((body: any) => body))
+                                    .pipe(map((body: any) => body.id))
+                                    
     }
 
     clear(){
