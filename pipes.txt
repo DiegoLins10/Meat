@@ -24,6 +24,7 @@ user: = {name: 'Diego Lins', isJedi: true}
 
 --formata em real valor default
 <div>{{price | currency: 'BRL': true}}</div>
+<div>{{price | currency: 'BRL': 'symbol'}}</div> // novo metodo para nao gerar mensagem console
 
 --limita array e string
 <div>{{user.name | slice: 0:4}}</div>

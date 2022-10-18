@@ -20,7 +20,7 @@ import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { OrderComponent } from './order/order.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
 import { OrderItemComponent } from './order/order-item/order-item.component';
@@ -56,8 +56,9 @@ registerLocaleData(ptBr)
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-    //RouterModule.forRoot(ROUTES)
+    FormsModule,
+    ReactiveFormsModule,
+    // RouterModule.forRoot(ROUTES)
   ],
   providers: [RestaurantsService, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
