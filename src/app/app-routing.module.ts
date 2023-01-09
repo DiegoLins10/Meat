@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { OrderComponent } from './order/order.component';
@@ -11,7 +10,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
+  {path: 'about', loadChildren: () => import('./about/about.module').then(d => d.AboutModule)},
   {path: 'restaurants/:id', component: RestaurantDetailComponent, 
   children:[
     {path: 'menu', component: MenuComponent},  //usando caminhos filhos

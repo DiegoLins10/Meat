@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { RouterModule } from '@angular/router';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
@@ -36,7 +35,6 @@ registerLocaleData(ptBr)
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent,
     RestaurantsComponent,
     RestaurantComponent,
     RestaurantDetailComponent,
