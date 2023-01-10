@@ -19,7 +19,6 @@ import { registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
 
 registerLocaleData(ptBr)
 
@@ -41,8 +40,7 @@ registerLocaleData(ptBr)
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule,
-    CoreModule
+    SharedModule.forRoot(),
     // RouterModule.forRoot(ROUTES)
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
