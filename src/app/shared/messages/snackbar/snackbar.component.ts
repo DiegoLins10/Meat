@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate} from "@angular/animations"
+import { trigger, state, style, transition, animate } from "@angular/animations";
+import { NotificationService } from "src/app/shared/messages/notification.service";
+import { timer, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-snackbar',
@@ -22,15 +24,27 @@ import { trigger, state, style, transition, animate} from "@angular/animations"
 })
 export class SnackbarComponent implements OnInit {
 
-  message: string = 'Hello, there!';
+  message: string = '';
   snackVisibility: string = 'hidden';
 
-  constructor() { }
+  constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
+    this.notificationService.notifier.pipe(
+      // primeiro cria uma mensagem e deixa visivel
+      tap(message => {
+        this.message = message;
+        this.snackVisibility = 'visible';
+      }),
+      // muda todo o objeto dentro do tap para um observable timer
+      switchMap(() => timer(3000))
+      // quando acabar o tempo ele muda a visibilidade novamente
+    ).subscribe(() => {
+      this.snackVisibility = 'hidden';
+    })
   }
 
-  toggleSnack(){
+  toggleSnack() {
     this.snackVisibility = this.snackVisibility === 'hidden' ? 'visible' : 'hidden';
   }
 }
