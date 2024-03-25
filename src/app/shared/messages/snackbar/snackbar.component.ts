@@ -36,7 +36,7 @@ export class SnackbarComponent implements OnInit {
         this.message = message;
         this.snackVisibility = 'visible';
       }),
-      // muda todo o objeto dentro do tap para um observable timer
+      // muda todo o objeto dentro do tap para um observable timer/ sobreescreve, com isso ele dá um unsubscribe e cria um novo subscribe nesse observable
       switchMap(() => timer(3000))
       // quando acabar o tempo ele muda a visibilidade novamente
     ).subscribe(() => {
