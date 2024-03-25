@@ -14,7 +14,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         animate('500ms 0s ease-in')
       ])
     ])
-  ]
+  ] // essa animação causa o efeito de descendo... o item
   
 })
 export class MenuItemComponent implements OnInit {
