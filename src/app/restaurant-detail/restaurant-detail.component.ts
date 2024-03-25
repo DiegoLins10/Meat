@@ -25,7 +25,11 @@ export class RestaurantDetailComponent implements OnInit {
       },
       error: error => {
         console.log(error);
+      },
+      complete: () => {
+        // do something when all observables are complete
+        // show success creation of all three entities
       }
-    })
+    });
   }
 }
